@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> item.unselectedTitleAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont
+                                                                                                                fontWithName:@"YOURFONT" size:14], NSFontAttributeName,
+                                                                     [UIColor whiteColor], NSForegroundColorAttributeName, nil];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4456731A-C64B-4BDD-90A3-608A6241DA3D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>attributestr</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

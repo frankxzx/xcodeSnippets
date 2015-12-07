@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//1,获得沙盒跟路径
+NSString *home = NSHomeDirectory();
+NSLog(@"%@",home);
+//2，doucument路径，方法会自动拼接”/“
+NSString *docPath = [home stringByAppendingPathComponent:@"Documents"];
+//3，NSString，字典，数组，NSData，NSNumber，常见的数据类型
+//新建数据
+NSArray *data = @[@"java",@10,@"lallal"];
+NSString *filePath = [docPath stringByAppendingPathComponent:@"data.plist"];
+
+//1,获得沙盒跟路径
+NSString *home = NSHomeDirectory();
+NSLog(@"%@",home);
+//2，doucument路径
+NSString *docPath = [home stringByAppendingPathComponent:@"Documents"];
+//3，NSString，字典，数组，NSData，NSNumber，常见的数据类型
+//文件路径
+NSArray *data = @[@"java",@10,@"lallal"];
+NSString *filePath = [docPath stringByAppendingPathComponent:@"data.plist"];
+
+//读取数据
+NSArray *array = [NSArray  arrayWithContentsOfFile:filePath];
+NSLog(@"%@",array);
+[data writeToFile:filePath atomically:YES];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>65E5BA09-21FC-4EA9-B8B5-7EAC6A3A3F69</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>写入 / 读取 沙盒</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

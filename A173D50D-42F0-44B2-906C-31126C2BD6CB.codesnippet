@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*
+UIViewController添加到uiNavController上时，uiviewcontroller的y值 == 状态栏的的y
+
+　　这时候设置 self.edgesForExtendedLayout = UIRectEdgeNone;
+
+　　uiviewcontroller的y值 == 导航栏y + 导航栏height
+
+　　/*
+   
+   　　　这种情况还可以设置，导航栏的bar的透明度属性translucent为no
+   
+   　　　self.navigationController.navigationBar.translucent = NO;
+   
+   　　   translucent属性在ios6之前默认为no，
+   
+   　　　而在ios7下的导航栏默认却是半透明的，为yes，所以该属性不会占据空间。
+   
+   　　*/
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A173D50D-42F0-44B2-906C-31126C2BD6CB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>导航栏 view 坐标 下移 高度</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

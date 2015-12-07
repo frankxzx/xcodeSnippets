@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> UIView *senderView = senderCell.superview;
+    CGPoint applicationFramePoint = CGPointMake(screenRect.origin.x,0-screenRect.origin.y);
+    CGPoint senderLocationInWindowPoint = [[[UIApplication sharedApplication] keyWindow] convertPoint:applicationFramePoint fromView:senderView];
+    CGRect senderFrame = senderCell.frame;
+    senderFrame.origin.x = senderLocationInWindowPoint.x;
+    senderFrame.origin.y = senderLocationInWindowPoint.y + senderFrame.origin.y;
+    CGPoint senderPoint = [self senderPointFromSenderRect:senderFrame];
+    [self showPopoverWithPoint:senderPoint];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2DACB6C0-7AFE-41CC-A41F-F5C9F1047E21</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>坐标系转化</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

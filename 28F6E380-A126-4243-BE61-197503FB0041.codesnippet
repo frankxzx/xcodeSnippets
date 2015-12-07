@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+CATransition *transition = [CATransition animation];
+transition.duration = 0.3f;
+transition.type = kCATransitionMoveIn;
+transition.subtype = kCATransitionFromTop;
+[[delegate window].layer addAnimation:transition forKey:nil];
+
+LeftVC *leftVC = (LeftVC *)[[delegate menuVC]leftViewController];
+leftVC.selectIndex = sender.tag +1;
+[delegate showMenu];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>28F6E380-A126-4243-BE61-197503FB0041</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>简单动画</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

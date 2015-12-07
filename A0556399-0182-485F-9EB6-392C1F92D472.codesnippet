@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//存储：需要重写的方法：
+-(void)encodeWithCoder:(NSCoder *)aCoder
+{
+    //将name属性进行编码，
+    [aCoder encodeObject:_name forKey:@"name"];
+    [aCoder encodeInt:_age forKey:@"age"];
+}
+
+// 读取：需要重写的方法
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super init]) {
+        _name = [aDecoder decodeObjectForKey:@"name"];
+        _age = [aDecoder decodeIntForKey:@"age"];
+    }
+    return self;
+    
+    //调用父类的方法
+    //    if (self = [super initWithCoder:aDecoder]) {
+    //
+    //    }
+    
+}
+
+注：如果是子类进行存取的话，需要在相应的方法第一行调用,这样父类中已经声明要进行归档的对象就不用重复声明了。
+
+[super encodeWithCoder:aCoder];
+if (self = [super initWithCoder:aDecoder]) {
+}
+
+实例，储存：
+
+//归档
+Person *p = [[Person alloc] init];
+p.name = @"jack";
+p.age = 10;
+p.height = 1.89;
+
+NSString *path = @"/Users/tengfei/Desktop/person.data";
+[NSKeyedArchiver archiveRootObject:p toFile:path];
+
+读取：
+
+//读档
+NSString *path = @"/Users/tengfei/Desktop/person.data";
+
+Person *p = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+NSLog(@"name:%@,age:%d",p.name,p.age);
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A0556399-0182-485F-9EB6-392C1F92D472</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NScoding用例</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

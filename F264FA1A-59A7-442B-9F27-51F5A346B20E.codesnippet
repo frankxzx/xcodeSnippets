@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UILabel *countLabel = ({
+        UILabel *label = [UILabel new];
+        RAC(label,text) = [RACObserve(self.viewModel, orderNumber)
+ map:^id(id value) {
+     return  [value stringValue];
+ }];
+        [[RACObserve(self.viewModel, orderNumber)deliverOnMainThread]subscribeNext:(NSNumber *x){
+            if(x.integerValue &gt; 0) {
+                label.hidden = NO;
+            }
+            if(x.integerValue &lt; 0) {
+                label.hidden = YES;
+            }
+        }];
+        label;
+    });</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F264FA1A-59A7-442B-9F27-51F5A346B20E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>View ViewModel 绑定</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

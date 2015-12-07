@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>returnButton = [UIButton buttonWithType:UIButtonTypeCustom];
+returnButton.frame = CGRectMake(10, 9, 50, 28);
+
+[returnButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+[returnButton setImage:[UIImage imageNamed:@"US MEAT_buttons.png"] forState:UIControlStateNormal];
+[returnButton setImage:[UIImage imageNamed:@""] forState:UIControlStateHighlighted];
+
+UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(8, 2, 50, 20)];
+label.backgroundColor = [UIColor clearColor];
+label.textColor = [UIColor whiteColor];
+label.font = [UIFont fontWithName:@"STHeiti-Medium.ttc" size:10];
+label.text = @"返回";
+[returnButton addSubview:label];
+[label release];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>41B0BCC8-FC4D-4A53-A0AC-78D843251FCE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>btn中添加label改变大小</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

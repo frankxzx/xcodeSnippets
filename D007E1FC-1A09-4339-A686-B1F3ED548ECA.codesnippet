@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>如果少了什么属性，在 build 时检查下即可。这样既解决了不方便扩展的问题，当有新的属性时也可以知道。
+
+
+不过看起来还是不够优雅，这个 builder 只是一个临时工具，用完了就扔掉了，既然这样，那有没有可能写法上符合 OC 的传统，又让这个 builder 「临时出现」一下？且看下面这段代码
+
+
+PFXiPhone6 *iPhone6 = [PFXiPhone6 createWithBuilder:^(PFXiPhone6Builder *builder){
+    builder.storage = 64;
+    builder.color = [UIColor goldenColor];
+    builder.place = @"HK";
+}];
+
+
+是不是看起来舒服多了。builder 只是在 block 范围内起作用，不会影响当前 context 的变量。这个 +[createWithBuilder:] 的代码如下
+
+
++ (instancetype)createWithBuilder:(BuilderBlock)block {
+    NSParameterAssert(block);
+    PFXiPhone6Builder *builder = [[PFXiPhone6Builder alloc] init];
+    block(builder);
+    return [builder build];
+}
+
+
+这里 build 方法，也有两种实现，第一种
+
+
+// PFXiPhone6Builder
+- (PFXiPhone6 *)build {
+    return [[PFXiPhone6 alloc] initwithBuilder:self];
+}
+
+// PFXiPhone6
+- (instancetype)initwithBuilder:(PFXiPhone6Builder *)builder {
+    if (self = [super init]) {
+        _storage = builder.storage;
+        _color = builder.color;
+        _place = builder.place;
+    }
+}
+
+
+另外一种是把两个过程合并为一个过程
+
+
+// PFXiPhone6Builder
+- (PFXiPhone6 *)build
+{
+    // 可以在这里对 property 做检查
+    NSAssert(self.place, @"发行区别忘了填哦");
+    
+    PFXiPhone6 *iphone6 = [[PFXiPhone6 alloc] init];
+    iPhone6.storage = builder.storage;
+    iPhone6.color = builder.color;
+    iPhone6.place = builder.place;
+    
+    return iPhone6;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D007E1FC-1A09-4339-A686-B1F3ED548ECA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>builder pattern用法</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

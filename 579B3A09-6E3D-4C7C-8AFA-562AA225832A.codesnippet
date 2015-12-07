@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>[UIView animateWithDuration:0.3f
+                          delay:0.0f
+         usingSpringWithDamping:.2f
+          initialSpringVelocity:10.f
+                        options:0 animations:^{
+                            button.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.2, 1.2);
+                        }
+                     completion:^(BOOL finished) {
+                         [self dismissMenu];
+                     }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>579B3A09-6E3D-4C7C-8AFA-562AA225832A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UIView弹簧效果</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

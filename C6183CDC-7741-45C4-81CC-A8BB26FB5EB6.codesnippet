@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>void CGRectDivide (
+                   CGRect rect,
+                   CGRect *slice,
+                   CGRect *remainder,
+                   CGFloat amount,
+                   CGRectEdge edge
+                   );
+//这个函数的功能很简单，就是将一个 CGRect 切割成两个 CGRect；其中，rect 参数是你要切分的对象；slice 是一个指向切出的 CGRect 的指针；remainder 是指向切割后剩下的 CGRect 的指针；amount 是你要切割的大小；最后一个参数 edge 是一个枚举值，代表 amount 开始计算的方向，假设 amount 为 10.0 那么：
+
+/*
+CGRectMinXEdge 代表在 rect 从左往右数 10 个单位开始切割
+CGRectMaxXEdge 代表在 rect 从右往左数 10 个单位开始切割
+CGRectMinYEdge 代表在 rect 从上往下数 10 个单位开始切割
+CGRectMaxYEdge 代表在 rect 从下往上数 10 个单位开始切割
+*/
+
+//代码如下：
+
+CGRect rect = CGRectMake(0.0, 0.0, 100.0, 80.0);
+CGRect slice, remainder;
+CGRectDivide(rect, &amp;slice, &amp;remainder, 40.0, CGRectMinXEdge);
+
+//和循环结合起来就可以方便构造一个网格布局：
+
+void (^addGrid)(CGRect) = ^(CGRect frame) {
+    UIView *grid = [[UIView alloc] initWithFrame:frame];
+    grid.backgroundColor = [UIColor colorWithHue:drand48()
+                                      saturation:1.0
+                                      brightness:1.0
+                                           alpha:1.0];
+    grid.layer.borderColor = [[UIColor grayColor] CGColor];
+    grid.layer.borderWidth = 0.5;
+    [self.view addSubview:grid];
+};
+
+CGFloat gridWidth = 40.0, gridHeight = 30.0;
+NSInteger numberOfRow = 10, numberOfColumn = 8;
+
+CGRect slice, rowRemainder, columnRemainder;
+
+rowRemainder = self.view.bounds;
+for (NSInteger i = 0; i &lt; numberOfRow; i++) { // 行
+    CGRectDivide(rowRemainder, &amp;slice, &amp;rowRemainder, gridHeight, CGRectMinYEdge);
+    
+    columnRemainder = slice;
+    for (NSInteger j = 0; j &lt; numberOfColumn; j++) { // 列
+        CGRectDivide(columnRemainder, &amp;slice, &amp;columnRemainder, gridWidth, CGRectMinXEdge);
+        addGrid(slice);
+    }
+}
+
+/*
+在实际应用过程中，布局经常要设计到添加加各种padding，为此，我们可以对 CGRectDivide 进行一个简单的封装，让它支持在切割时加入padding：
+*/
+
+void QZRectDivideWithPadding(CGRect rect, CGRect *slice, CGRect *remainder, CGFloat amount, CGFloat padding, CGRectEdge edge) {
+    
+    CGRect tmpSlice;
+    
+    CGRectDivide(rect, &amp;tmpSlice, &amp;rect, amount, edge);
+    if (slice) {
+        *slice = tmpSlice;
+    }
+    
+    CGRectDivide(rect, &amp;tmpSlice, &amp;rect, padding, edge);
+    if (remainder) {
+        *remainder = rect;
+    }
+}
+
+//下面是增加 padding 后的代码：
+
+CGFloat paddingX = 3.0, paddingY = 5.0;
+CGFloat gridWidth = 40.0, gridHeight = 30.0;
+NSInteger numberOfRow = 10, numberOfColumn = 8;
+
+CGRect slice, rowRemainder, columnRemainder;
+
+rowRemainder = bounds;
+for (NSInteger i = 0; i &lt; numberOfRow; i++) { // 10 行
+    QZRectDivideWithPadding(rowRemainder, &amp;slice, &amp;rowRemainder, gridHeight, paddingY, CGRectMinYEdge);
+    
+    columnRemainder = slice;
+    for (NSInteger j = 0; j &lt; numberOfColumn; j++) { // 8 列
+        QZRectDivideWithPadding(columnRemainder, &amp;slice, &amp;columnRemainder, gridWidth, paddingX, CGRectMinXEdge);
+        addGrid(slice);
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C6183CDC-7741-45C4-81CC-A8BB26FB5EB6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>CGRectDivide 画格子</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

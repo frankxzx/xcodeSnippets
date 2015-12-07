@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+-(int)calculateTextNumber:(NSString *)text
+
+{
+    
+    float number = 0.0;
+    
+    int index = 0;
+    
+    for (index; index &lt; [text length]; index++)
+        
+    {
+        
+        NSString *protoText = [text substringToIndex:[text length] - index];
+        
+        NSString *toChangetext = [text substringToIndex:[text length] -1 -index];
+        
+        NSString *charater;
+        
+        if ([toChangetext length]==0)
+            
+        {
+            
+            charater = protoText;
+            
+        }
+        
+        else
+            
+        {
+            
+            NSRange range = [text rangeOfString:toChangetext];
+            
+            charater = [protoText stringByReplacingCharactersInRange:range withString:@""];
+            
+            
+            
+        }
+        
+        NSLog(charater);
+        
+        if ([charater lengthOfBytesUsingEncoding:NSUTF8StringEncoding] == 3)
+            
+        {
+            
+            number++;
+            
+        }
+        
+        else 
+            
+        {
+            
+            number = number+0.5;
+            
+        }
+        
+    }
+    
+    return ceil(number);
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9DE80D41-1DFB-4E54-B657-D8CCE76B8F3D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>计算字符串的字数</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

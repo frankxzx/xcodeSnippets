@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>   RegisterRequest *request = [RegisterRequest Request];
+    request.phone = @13327907397;
+    request.verifyCode = @233;
+    [[ActionSceneModel sharedInstance]sendRequest:request success:^{
+        
+    } error:^{
+        
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E4464EAF-D364-4B57-ACA2-D8394E1BF665</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>注册</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

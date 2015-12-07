@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(void)playBackgroundMusic{
+    
+    NSString *musicPath =[[NSBundle mainBundle]pathForResource:@"no" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:musicPath];
+    NSError *error;
+    
+    audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:url error:&amp;error];
+    audioPlayer.numberOfLoops = -1;
+    if(audioPlayer ==nil){
+        NSString *errorInfo = [NSString stringWithString:[error description]];
+        NSLog(@"the error is:%@",errorInfo);
+    }else{
+        [audioPlayer play];
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E1536BE5-FCDF-468C-BEB4-822F5789456C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string></string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

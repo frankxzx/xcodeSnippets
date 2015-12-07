@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UILabel* rightBlock = [[UILabel alloc] init];
+    rightBlock.adjustsFontSizeToFitWidth = YES;
+    rightBlock.text = @"block2: width, height, top from block1. leading superview centerX + 10.";
+    rightBlock.backgroundColor = [UIColor darkGrayColor];
+    [insetBackgroundView addSubview:rightBlock];
+    [rightBlock constrainWidthToView:leftBlock predicate:nil];
+    [rightBlock constrainHeightToView:leftBlock predicate:nil];
+    [rightBlock alignTopEdgeWithView:leftBlock predicate:nil];
+    [rightBlock alignTrailingEdgeWithView:insetBackgroundView predicate:@"-20"];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>235F0E7B-3887-43E2-BD92-DD9C770B9CCA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>适应字体长度的 label </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

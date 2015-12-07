@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>Preprocessor</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#undef	AS_SINGLETON
+#define AS_SINGLETON( __class ) \
+- (__class *)sharedInstance; \
++ (__class *)sharedInstance;
+#undef	DEF_SINGLETON
+#define DEF_SINGLETON( __class ) \
+- (__class *)sharedInstance \
+{ \
+return [__class sharedInstance]; \
+} \
++ (__class *)sharedInstance \
+{ \
+static dispatch_once_t once; \
+static __class * __singleton__; \
+dispatch_once( &amp;once, ^{ __singleton__ = [[[self class] alloc] init]; } ); \
+return __singleton__; \
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>750C1FC8-8F93-414F-82AB-13A24665C5A2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>单例宏</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

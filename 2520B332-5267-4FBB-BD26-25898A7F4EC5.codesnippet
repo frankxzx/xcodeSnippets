@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // 初始化手势并添加执行方法
+    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(return)];
+
+    // 手势方向
+    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    
+    // 响应的手指数
+    swipeRecognizer.numberOfTouchesRequired = 1;
+
+    // 添加手势
+    [[self view] addGestureRecognizer:swipeRecognizer];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2520B332-5267-4FBB-BD26-25898A7F4EC5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>手势</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

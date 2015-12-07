@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+[[self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:)
+                fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(RACTuple *tuple) {
+    NSLog(@"%@", tuple.first);
+    NSLog(@"%@", tuple.second);
+}];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FF234841-74F3-4729-9B98-EB94EE7D714D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>RAC（UITableView Delegate）Example</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

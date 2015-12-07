@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(void) onTimer {
+    
+    float x = self.peopleLocationBtn.center.x;
+    float y = self.peopleLocationBtn.center.y;
+    self.peopleLocationBtn.center = CGPointMake(self.peopleLocationBtn.center.x + pos.x, self.peopleLocationBtn.center.y + pos.y);
+    
+    if (self.peopleLocationBtn.center.x &gt; self.view.width || self.peopleLocationBtn.center.x &lt; 0)
+        pos.x = -pos.x;
+    if (self.peopleLocationBtn.center.y &gt; self.view.height-80 || self.peopleLocationBtn.center.y &lt; -64)
+        pos.y = -pos.y;
+    
+    UIImageView* shadowImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"shadow"]];
+    shadowImage.contentMode = UIViewContentModeScaleAspectFit;
+    shadowImage.frame = CGRectMake(x-16, y-16, 50, 50);
+    [self.view addSubview:shadowImage];
+    
+    [UIView animateWithDuration:1 animations:^{
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+        shadowImage.frame = CGRectMake(x-6, y-6, 50, 50);
+        [shadowImage setAlpha:0.0];
+    } completion:^(BOOL finished) {
+        [shadowImage removeFromSuperview];
+    }];
+    
+    [self.view bringSubviewToFront:self.peopleLocationBtn];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7DB28742-B80F-4E5F-8208-1C7B1C7ABCE8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>定时动画</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

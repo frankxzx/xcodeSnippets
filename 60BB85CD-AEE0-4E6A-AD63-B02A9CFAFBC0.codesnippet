@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>以下代码都放在viewDidLoad方法体里：
+
+1、加载网络html文件:
+
+[html] view plaincopy
+
+NSURL *url = [NSURL URLWithString:@"http://localhost:8080/jmDemo/index.html"];
+NSURLRequest *request = [NSURLRequest requestWithURL:url];
+[_webView loadRequest:request];
+
+
+2、加载本地html文件，在iphone项目里面
+
+[html] view plaincopy
+
+NSString *path = [[NSBundle mainBundle] pathForResource:@"indedx" ofType:@"html"];
+NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]];
+[_webView loadRequest:request];
+
+
+3、加载本地html文件，不在iphone项目里面，在Documents文件夹里
+
+[html] view plaincopy
+
+NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+NSString *documentsDirectory = [paths objectAtIndex:0];
+NSString *path = [documentsDirectory stringByAppendingPathComponent:@"index.html"];
+NSURL *url = [NSURL fileURLWithPath:path];
+NSURLRequest *request = [NSURLRequest requestWithURL:url];
+[_webView loadRequest:request];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>60BB85CD-AEE0-4E6A-AD63-B02A9CFAFBC0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.HTML</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UIWebView加载html</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

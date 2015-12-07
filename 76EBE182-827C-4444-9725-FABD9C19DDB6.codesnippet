@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UILabel *infoLabel = [[UILabel alloc] init];
+    infoLabel.numberOfLines = 0;
+    infoLabel.backgroundColor = [UIColor clearColor];
+    infoLabel.font = [UIFont systemFontOfSize:12];
+    infoLabel.textColor = [UIColor colorWithHexString:@"0x666666"];
+    infoLabel.textAlignment = NSTextAlignmentCenter;
+    infoLabel.text = [NSString stringWithFormat:@"官网：https://coding.net \nE-mail：link@coding.net \n微博：Coding \n微信：扣钉Coding"];
+    [self.view addSubview:infoLabel];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>76EBE182-827C-4444-9725-FABD9C19DDB6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>多行文字放在一个label</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

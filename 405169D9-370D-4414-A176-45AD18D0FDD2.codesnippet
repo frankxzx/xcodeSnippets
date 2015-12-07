@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // 定时检查未读数
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(checkUnreadCount) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+}
+
+/**
+ *  定时检查未读数
+ */
+- (void)checkUnreadCount
+{
+//    IWLog(@"checkUnreadCount-----");
+    
+    // 1.请求参数
+    IWUserUnreadCountParam *param = [IWUserUnreadCountParam param];
+    param.uid = @([IWAccountTool account].uid);
+    
+    // 2.发送请求
+    [IWUserTool userUnreadCountWithParam:param success:^(IWUserUnreadCountResult *result) {
+        // 3.设置badgeValue
+        // 3.1.首页
+        self.home.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", result.status];
+        
+        // 3.2.消息
+        self.message.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", result.messageCount];
+        
+        // 3.3.我
+        self.me.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", result.follower];
+        
+        // 4.设置图标右上角的数字
+        [UIApplication sharedApplication].applicationIconBadgeNumber = result.count;
+    } failure:^(NSError *error) {
+        
+    }];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>405169D9-370D-4414-A176-45AD18D0FDD2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>定时器在子线程中进行</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

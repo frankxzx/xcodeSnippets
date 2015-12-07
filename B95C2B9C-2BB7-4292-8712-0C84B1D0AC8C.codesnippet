@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+//添加电话图标按钮
+
+UIButton *btnPhone = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+
+btnPhone.frame = CGRectMake(280,10,30,30);
+
+UIImage *image = [UIImage imageNamed:@"phone.png"];
+
+[btnPhone setBackgroundImage:image forState:UIControlStateNormal];
+
+
+
+//点击拨号按钮直接拨号
+
+[btnPhone addTarget:self action:@selector(callAction:event:) forControlEvents:UIControlEventTouchUpInside];
+
+
+
+[cell.contentView addSubview:btnPhone];  //cell是一个UITableViewCell
+
+
+
+//定义点击拨号按钮时的操作
+
+- (void)callAction:(id)sender event:(id)event{
+    
+    NSSet *touches = [event allTouches];
+    
+    UITouch *touch = [touches anyObject];
+    
+    CGPoint currentTouchPosition = [touch locationInView:self.listTable];
+    
+    NSIndexPath *indexPath = [self.listTable indexPathForRowAtPoint: currentTouchPosition];
+    
+    if (indexPath == nil) {
+        
+        return;
+        
+    }
+    
+    NSInteger section = [indexPath section];
+    
+    NSUInteger row = [indexPath row];
+    
+    NSDictionary *rowData = [datas objectAtIndex:row];
+    
+    
+    
+    NSString *num = [[NSString alloc] initWithFormat:@"tel://%@",number]; //number为号码字符串
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:num]]; //拨号 
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B95C2B9C-2BB7-4292-8712-0C84B1D0AC8C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>在程序中实现电话的拨打：</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

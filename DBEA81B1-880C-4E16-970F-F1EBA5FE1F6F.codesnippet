@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    self.blurredImageView = [[UIImageView alloc] init];
+    self.blurredImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.blurredImageView.alpha = 0;
+    [self.blurredImageView setImageToBlur:background blurRadius:10
+                          completionBlock:nil];
+    [self.view addSubview:self.blurredImageView];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DBEA81B1-880C-4E16-970F-F1EBA5FE1F6F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>模糊图片添加</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

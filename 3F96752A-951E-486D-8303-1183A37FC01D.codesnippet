@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*UITableViewController添加到UITabBarController上时，UITableViewController的底部一部分cell会被TabBar挡住
+
+　　这时候设置self.edgesForExtendedLayout = UIRectEdgeNone;
+
+　　TabBar的y值 == CGRectGetMaxY（UITableViewController）*/
+
+
+
+　　self.extendedLayoutIncludesOpaqueBars = YES;//意思展开包括状态栏
+
+
+    self.automaticallyAdjustsScrollViewInsets = YES;
+//　　当设计到scrollView、tableview时，在设置完数据的时候，内部会改变contentInsets的top值为64　例如：group样式的tableView在有导航栏的控制器下，第0组的头部会多出一部分高度h原因是 ios7下group样式的tabelView的第0组第0个cell，在tableview中的y值为35！！！并且在设置完cell数据之后，系统默认会执行
+
+self.automaticallyAdjustsScrollViewInsets = YES;
+//也就是tableview的contentInset.top = 64;所以 第0组第0行cell的y值 = 64 + 35.要达到第0组第0行cell的y值 = 导航栏底部 的效果。就要在cell设置数据之前，
+
+tableView.contentInset = UIEdgeInsetsMake(- 35, 0, 0, 0);
+//这样在cell在设置完数据后，系统内部改变top值增加64，就恰好达到效果。若要达到每个group头部等高效果，
+
+　　　　 tableView.sectionHeaderHeight = cellSectionHeight;
+
+　　　　 tableView.sectionFooterHeight = 0;　	tableView.contentInset = UIEdgeInsetsMake(cellSectionHeight - 35, 0, 0, 0);
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3F96752A-951E-486D-8303-1183A37FC01D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>tableView上移</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

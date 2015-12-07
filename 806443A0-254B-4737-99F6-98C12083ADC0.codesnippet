@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//  取消视图
+- (void)dismissAlertView{
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        
+        self.transform = CGAffineTransformScale(CGAffineTransformIdentity,0.0, 0.0);
+        self.alpha = 0.0;
+        self.backgroundView.alpha = 0.0;
+    }completion:^(BOOL finished) {
+        
+        self.cancelBlock = nil;
+        self.firstBlcok = nil;
+        self.secondBlock = nil;
+        self.thirdBlock = nil;
+        [_backgroundView removeFromSuperview];
+        [self removeFromSuperview];
+        _backgroundView = nil;
+        
+    }];
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>806443A0-254B-4737-99F6-98C12083ADC0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>dismiss 动画</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

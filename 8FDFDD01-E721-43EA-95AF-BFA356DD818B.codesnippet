@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>       
+//        UIView *view = [[UIView alloc]initWithFrame:kScreen_Bounds];
+//        [self.view addSubview:view];
+//        [self.view sendSubviewToBack:_shareActionSheet];
+//        view.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.2];
+        
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8FDFDD01-E721-43EA-95AF-BFA356DD818B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>黑色透明笼罩</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>UIImageView *headIcon = [[UIImageView alloc] initWithFrame:CGRectMake(85, 110, 150, 150)];
+headIcon.layer.cornerRadius  = 75.0f;
+/* 针对有imageView的需要设置下面属性为 YES 否则圆角失效 */
+headIcon.layer.masksToBounds = YES;
+headIcon.image = [UIImage imageNamed:@"headIcon"];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B2B24422-2D81-418C-907F-A873BBC4738B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>圆形图片创建</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

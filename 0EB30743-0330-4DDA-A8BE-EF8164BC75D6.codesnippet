@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+
+CGRect frame = {{0, 0}, {320, 20}};
+
+UIWindow* wd = [[UIWindow alloc] initWithFrame:frame];
+
+[wd setBackgroundColor:[UIColor clearColor]];
+
+[wd setWindowLevel:UIWindowLevelStatusBar];
+
+frame = CGRectMake(100, 0, 30, 20);
+
+UIImageView* img = [[UIImageView alloc] initWithFrame:frame];
+
+[img setContentMode:UIViewContentModeCenter];
+
+[img setImage:[UIImage imageNamed:@"00_0103.png"]];
+
+[wd addSubview:img];
+
+[wd makeKeyAndVisible];
+
+
+
+[UIView beginAnimations:nil context:nil];
+
+[UIView setAnimationDuration:2];
+
+frame.origin.x += 150;
+
+[img setFrame:frame];
+
+[UIView commitAnimations];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0EB30743-0330-4DDA-A8BE-EF8164BC75D6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>实现自定义的状态栏（遮盖状态栏）：</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

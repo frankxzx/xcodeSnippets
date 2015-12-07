@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//1,利用NSUserDefaults能直接访问软件的偏好设置文件夹
+NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//2,存储数据
+[defaults setObject:@"tf" forKey:@"account"];
+[defaults setObject:@"123" forKey:@"pwd"];
+
+//3，立刻同步
+[defaults synchronize];
+
+
+//读取
+NSUserDefaults defaults = [NSUserDefaults standardUserDefaults];
+NSString account = [defaults objectForKey:@"account"];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BD6E1DB7-6FDC-453D-91DC-144F42FCA2EC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>设置nsuserdefaults</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
