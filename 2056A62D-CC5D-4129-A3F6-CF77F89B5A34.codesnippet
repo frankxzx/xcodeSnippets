@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//    登陆倒计时,计时功能
+    [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) {
+
+        RACDisposable *schedulerDisposable = [[RACScheduler mainThreadScheduler]afterDelay:2 schedule:^{
+            
+            if (arc4random()%10 &gt; 1) {
+                [subscriber sendNext:@"success"];
+                [subscriber sendCompleted];
+            } else {
+                [subscriber sendError:[NSError errorWithDomain:@"login_error_domain" code:200 userInfo:@{@"message":@"登陆失败"}]];
+            }
+        }];
+
+            return [RACDisposable disposableWithBlock:^{
+                [schedulerDisposable dispose];
+            }];
+    }];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2056A62D-CC5D-4129-A3F6-CF77F89B5A34</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>rac 计时</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

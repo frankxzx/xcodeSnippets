@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//    side effect
+   RACSignal *signal = [[RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) {
+        
+        [subscriber sendNext:@"success"];
+        [subscriber sendCompleted];
+       
+       return [RACDisposable disposableWithBlock:^{
+           
+       }];
+    }]replay];
+    
+//    订阅两次 block会调用两次（使用replay，将第一次订阅缓存，第二次接收缓存信息）
+    [signal subscribeNext:^(id x) {
+        
+    }];
+    
+    [signal subscribeNext:^(id x) {
+        
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>61985CE0-E370-4C69-8DE0-9A030CCE2BBD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>rac side effect</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

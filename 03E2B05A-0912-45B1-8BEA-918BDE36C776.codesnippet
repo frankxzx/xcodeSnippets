@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//    信号节流(0.3s 订阅者接收通知)
+//    忽略空字符串
+//    与上一个字符串不同时发送信号
+    UITextField *textField;
+    [[[[[[textField.rac_textSignal throttle:0.3]distinctUntilChanged]ignore:@""]
+       //    flatten信号的信号
+      flattenMap:^id(id value) {
+          // NSString -&gt; 信号
+         return [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) {
+             [subscriber sendNext:value];
+             [subscriber sendCompleted];
+             
+             return [RACDisposable disposableWithBlock:^{
+                 //取消订阅
+                  }];
+               }];
+            }]switchToLatest]
+         subscribeNext:^(id x) {
+//        request or something else
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>03E2B05A-0912-45B1-8BEA-918BDE36C776</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>rac 信号 节流 flattenMap</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

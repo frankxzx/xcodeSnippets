@@ -7,9 +7,11 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollerTapped:)];
-
-[scroller addGestureRecognizer:tapRecognizer];</string>
+	<string>UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] init];
+[annotationView addGestureRecognizer:tapRecognizer];
+[tapRecognizer.rac_gestureSignal subscribeNext:^(id x) {
+    
+}];</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>1204E88F-AA76-47C3-BE6B-4C6BC66DA4F0</string>
 	<key>IDECodeSnippetLanguage</key>

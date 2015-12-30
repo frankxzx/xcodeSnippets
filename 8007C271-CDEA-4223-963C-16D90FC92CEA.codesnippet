@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>RAC(self.imageView, image) = [[RACSignal startEagerlyWithScheduler:[RACScheduler schedulerWithPriority:RACSchedulerPriorityBackground]
+                                                             block:^(id &lt;RACSubscriber&gt; subscriber) {
+                                                                 NSError *error;
+                                                                 NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://ww3.sinaimg.cn/bmiddle/7128be06jw1ei4hfthoj3j20hs0bomyd.jpg"]
+                                                                                                      options:NSDataReadingMappedAlways
+                                                                                                        error:&amp;error];
+                                                                 if(error) {
+                                                                     [subscriber sendError:error];
+                                                                 }
+                                                                 else {
+                                                                     [subscriber sendNext:[UIImage imageWithData:data]];
+                                                                     [subscriber sendCompleted];
+                                                                 }
+                                                             }] deliverOn:[RACScheduler mainThreadScheduler]];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8007C271-CDEA-4223-963C-16D90FC92CEA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>rac异步下载图片</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

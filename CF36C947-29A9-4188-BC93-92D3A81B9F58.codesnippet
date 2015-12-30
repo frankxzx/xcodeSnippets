@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>Note: CocoaPods handles this automatically if you only specify the Debug configuration for FLEX in your Podfile. FLEX makes it easy to explore the internals of your app, so it is not something you should expose to your users. Fortunately, it is easy to exclude FLEX files from Release builds. In Xcode, navigate to the "Build Settings" tab of your project. Click the plus and select Add User-Defined Setting.
+
+Name the setting EXCLUDED_SOURCE_FILE_NAMES. For your Release configuration, set the value to FLEX*. This will exclude all files with the prefix FLEX from compilation. Leave the value blank for your Debug configuration.</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CF36C947-29A9-4188-BC93-92D3A81B9F58</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Flex配置</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

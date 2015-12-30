@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//    信号合并
+    RACSignal *signalA;
+    RACSignal *signalB;
+    RACSignal *signalC;
+    [[signalA merge:signalB]subscribeNext:^(id x) {
+        
+    }];
+    
+//    信号合并 A发送完后 B发送 (用于有逻辑先后的网络请求)
+    [[signalA concat:signalB]subscribeNext:^(id x) {
+        
+    }];
+    
+//    两个信号打包，返回一个元组
+    [[signalA zipWith:signalB]subscribeNext:^(RACTuple *tuple) {
+        
+    }];
+    
+//    两个以上信号打包，返回一个元组
+    [[RACSignal combineLatest:@[signalA,signalB,signalC]]subscribeNext:^(RACTuple *tuple){
+        
+    }];
+    
+//    信号合并
+    [RACSignal combineLatest:@[signalA,signalB,signalC] reduce:^(NSString *x1,NSString *x2,NSString *x3){
+        
+        return @"2";
+    }];
+    
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4E42BBAC-E38A-4DEF-B778-DD80831240EF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>rac 信号合并</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>[[self rac_signalForControlEvents:UIControlEventEditingDidBegin]
+subscribeNext:^(NSNumber *editing) {
+    self.bottomBorder.backgroundColor = [UIColor blackColor].CGColor;
+}];
+[[self rac_signalForControlEvents:UIControlEventEditingDidEnd]
+subscribeNext:^(NSNumber *editing) {
+    self.bottomBorder.backgroundColor = [UIColor grayColor].CGColor;
+}];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>210DC897-CA60-4C86-8BC6-FD68F4A41A48</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Ruby</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>rac UITextField 输入状态改变背景变化</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

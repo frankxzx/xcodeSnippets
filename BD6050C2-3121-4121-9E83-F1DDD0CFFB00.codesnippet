@@ -7,13 +7,18 @@
 		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define kTipAlert(_S_, ...)     [[[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:(_S_), ##__VA_ARGS__] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil] show]</string>
+	<string>打开终端，输入以下代码：
+
+defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
+获取到DVTPlugInCompatibilityUUID，然后
+
+find ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins -name Info.plist -maxdepth 3 | xargs -I{} defaults write {} DVTPlugInCompatibilityUUIDs -array-add 9F75337B-21B4-4ADC-B558-F9CADF7073A7</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>383AD7EC-BC73-42D7-8B94-68BF1B0137FE</string>
+	<string>BD6050C2-3121-4121-9E83-F1DDD0CFFB00</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>alertview宏定义</string>
+	<string>xcode 插件失效</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

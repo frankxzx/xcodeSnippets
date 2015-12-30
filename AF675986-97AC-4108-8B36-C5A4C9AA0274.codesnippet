@@ -8,7 +8,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>RAC(self.view,center) = [[recognizer rac_gestureSignal]map:^id(UIGestureRecognizer *recognizer) {
-    return [NSValue valueWithCGPoint:recognizer locationInView:recognizer.view];};]
+    return [NSValue valueWithCGPoint:[recognizer locationInView:recognizer.view]];};]
 })</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>AF675986-97AC-4108-8B36-C5A4C9AA0274</string>

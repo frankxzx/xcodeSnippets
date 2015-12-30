@@ -4,16 +4,20 @@
 <dict>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>TopLevel</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define kTipAlert(_S_, ...)     [[[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:(_S_), ##__VA_ARGS__] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil] show]</string>
+	<string>//    信号合并 A发送完后 B发送 (用于有逻辑先后的网络请求)
+    [[signalA concat:signalB]subscribeNext:^(id x) {
+        
+    }];
+    </string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>383AD7EC-BC73-42D7-8B94-68BF1B0137FE</string>
+	<string>D07AEA2A-121F-460C-AF84-D91C906ACF41</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>alertview宏定义</string>
+	<string>rac 信号同步</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

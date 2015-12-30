@@ -100,7 +100,7 @@ for (NSInteger i = 0; i &lt; numberOfRow; i++) { // 10 行
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>CGRectDivide 画格子</string>
+	<string>CGRectDivide 画格子 网格 九宫格 线</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -2,18 +2,33 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>pragma</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>TopLevel</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define kTipAlert(_S_, ...)     [[[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:(_S_), ##__VA_ARGS__] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil] show]</string>
+	<string>#pragma mark - Life cycle
+
+    
+#pragma mark - Interface
+
+    
+#pragma mark - Event response
+    
+#pragma mark - Private method
+
+#pragma mark - Delegate
+
+#pragma mark - Getters and Setters
+  </string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>383AD7EC-BC73-42D7-8B94-68BF1B0137FE</string>
+	<string>6689EE37-1A70-4A0F-AE27-0B6061B6B755</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>alertview宏定义</string>
+	<string>#pragma marks</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ *  开始旋转
+ */
+- (void)startRotation:(UIView *)view {
+    _imgRotation.hidden = NO;
+    _lblMessage.hidden = NO;
+    CABasicAnimation* rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
+    rotationAnimation.duration = 2.0;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = MAXFLOAT;
+    [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+}
+
+/**
+ *  结束旋转
+ */
+- (void)stopRotation:(UIView *)view {
+    //    _imgRotation.hidden = YES;
+    //    _lblMessage.hidden = YES;
+    [view.layer removeAllAnimations];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5D5A2916-8CC5-44EA-B42D-F9F47B54788D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>旋转动画</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

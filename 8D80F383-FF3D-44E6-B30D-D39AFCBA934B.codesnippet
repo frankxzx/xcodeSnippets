@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                     action:@selector(Tapped:)];
+UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                                            action:@selector(TappedDouble:)];
+[doubleTapGestureRecognizer setNumberOfTapsRequired:2];
+[self addGestureRecognizer:tap];
+[self addGestureRecognizer:doubleTapGestureRecognizer];
+[tap requireGestureRecognizerToFail:doubleTapGestureRecognizer];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8D80F383-FF3D-44E6-B30D-D39AFCBA934B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>单机双击事件解决冲突</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

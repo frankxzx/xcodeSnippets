@@ -7,13 +7,22 @@
 		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define kTipAlert(_S_, ...)     [[[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:(_S_), ##__VA_ARGS__] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil] show]</string>
+	<string>#define   WAIT  \
+do{ \
+[self expectationForNotification:@"XzxUnitTest" object:nil handler:nil];\
+[self waitForExpectationsWithTimeout:60 handler:nil];\
+}while (0);
+
+#define NOTIFY \
+do{ \
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"XzxUnitTest" object:nil]; \
+}while (0);\</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>383AD7EC-BC73-42D7-8B94-68BF1B0137FE</string>
+	<string>227E15E0-7F5C-4CD2-9F12-A7C26BFFC029</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>alertview宏定义</string>
+	<string>测试宏</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

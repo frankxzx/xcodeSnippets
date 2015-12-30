@@ -7,13 +7,21 @@
 		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define kTipAlert(_S_, ...)     [[[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:(_S_), ##__VA_ARGS__] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil] show]</string>
+	<string>static inline NSRegularExpression * ParenthesisRegularExpression() {
+    static NSRegularExpression *_parenthesisRegularExpression = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        _parenthesisRegularExpression = [[NSRegularExpression alloc] initWithPattern:@"\\([^\\(\\)]+\\)" options:NSRegularExpressionCaseInsensitive error:nil];
+    });
+    
+    return _parenthesisRegularExpression;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>383AD7EC-BC73-42D7-8B94-68BF1B0137FE</string>
+	<string>076566E7-5F37-488C-B7F3-892047067645</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>alertview宏定义</string>
+	<string>全局静态c函数</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
