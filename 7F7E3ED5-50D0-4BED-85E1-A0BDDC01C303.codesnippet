@@ -4,7 +4,7 @@
 <dict>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>RAC(self.imageView, image) = [[RACSignal startEagerlyWithScheduler:[RACScheduler schedulerWithPriority:RACSchedulerPriorityBackground]
@@ -20,9 +20,10 @@
                                                                      [subscriber sendNext:[UIImage imageWithData:data]];
                                                                      [subscriber sendCompleted];
                                                                  }
-                                                             }] deliverOn:[RACScheduler mainThreadScheduler]];</string>
+                                                             }] deliverOn:[RACScheduler mainThreadScheduler]];
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>8007C271-CDEA-4223-963C-16D90FC92CEA</string>
+	<string>7F7E3ED5-50D0-4BED-85E1-A0BDDC01C303</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
